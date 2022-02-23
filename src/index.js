@@ -6,10 +6,12 @@ import { Provider } from "react-redux";
 import { StyledEngineProvider } from '@mui/material/styles';
 
 import usersReducer from "./features/Users";
+import counterReducer from "./features/Counter";
 
 const store = configureStore({
   reducer: {
     users: usersReducer,
+    counter: counterReducer
   },
 });
 
