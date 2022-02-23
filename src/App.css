@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.displayUsers {
+  margin-top: 20px;
+}
+
+.addUser {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.displayUsers div {
+
+  text-align: center;
+}
+
+.card {
+  margin-bottom: 20px;
+}
