@@ -1,17 +1,31 @@
 import "./App.css";
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Landing from './Landing';
+import Forms from './Forms';
+import SignUpForm from './SignUpForm';
+import NotFound from './NotFound';
 
-import Counter from './Counter';
-import Users from './Users';
 
-
-function App() {
+const App = () => {
 
 
   return (
-    <div className="App">
-      <Users />
-      <Counter />
-    </div>
+    <>
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/forms" element={<Forms />} />
+          <Route path="/signup" element={<SignUpForm />}
+          />
+          <Route path="*" element={<NotFound />} >
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
+
+    </>
   );
 }
 

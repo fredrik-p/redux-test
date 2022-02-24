@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addUser, deleteUser, updateUsername } from "./features/Users";
+import { addUser, deleteUser, updateUsername } from "../features/Users";
 import { Button, TextField, Typography, Card } from "@mui/material";
 import CardContent from '@mui/material/CardContent';
 

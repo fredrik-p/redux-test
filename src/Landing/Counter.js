@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, incrementByAmount } from "./features/Counter";
+import { decrement, increment, incrementByAmount } from "../features/Counter";
 import { Button, Typography, Card, CardContent } from "@mui/material";
 
 export default function Counter() {
