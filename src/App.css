@@ -16,6 +16,11 @@ body {
   overflow: auto; 
 }
 
+a {
+  
+  text-decoration: none;
+  
+}
 
 .displayUsers {
   margin-top: 20px;

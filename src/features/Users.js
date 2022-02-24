@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { UsersData } from "../Landing/FakeData";
+import { UsersData } from "../Redux/FakeData";
 
 export const userSlice = createSlice({
   name: "users",

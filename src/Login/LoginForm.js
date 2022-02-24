@@ -5,13 +5,15 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+import {
+    Link,
+} from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import Container from '@mui/material/Container';
-import { useForm, Controller } from 'react-hook-form'
+import { useFormState, Controller } from 'react-hook-form'
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -35,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
     const classes = useStyles();
-    const { register, handleSubmit, control } = useForm()
+    const { register, handleSubmit, control } = useFormState()
 
     return (
 
@@ -73,10 +75,16 @@ export default function SignIn() {
                         id="password"
                         autoComplete="current-password"
                     />
-                    <FormControlLabel
-                        control={
-                            <Controller as={Checkbox} control={control} name="remember" color="primary" defaultValue={false} />}
-                        label="Remember me"
+                    <Controller
+                        name='contactAutre'
+                        control={control}
+                        defaultValue={false}
+                        render={({ field }) => (
+                            <FormControlLabel
+                                control={<Checkbox {...field} />}
+                                label='Remember me'
+                            />
+                        )}
                     />
                     <Button
                         type="submit"
@@ -89,17 +97,19 @@ export default function SignIn() {
                     </Button>
                     <Grid container>
                         <Grid item xs>
-                            <Link href="#" variant="body2">
+                            <Link to="#">
                                 Forgot password?
                             </Link>
                         </Grid>
                         <Grid item>
-                            <Link href="/signup" variant="body2">
-                                {"Don't have an account? Sign Up"}
+                            <Link to="/signup">
+                                Don't have an account? Sign Up
                             </Link>
                         </Grid>
                     </Grid>
                 </form>
+                <Link to="/" style={{ marginTop: '30px' }}><Typography sx={{ color: 'darkgrey' }}>BACK</Typography></Link>
+
             </div>
         </Container>
     );

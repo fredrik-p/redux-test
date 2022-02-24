@@ -5,13 +5,15 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
+import {
+    Link,
+} from "react-router-dom";
 import Grid from '@mui/material/Grid';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import Typography from '@mui/material/Typography';
 import makeStyles from '@mui/styles/makeStyles';
 import Container from '@mui/material/Container';
-import { useForm, Controller } from 'react-hook-form'
+import { useFormState, Controller } from 'react-hook-form'
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -35,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SignIn() {
     const classes = useStyles();
-    const { register, handleSubmit, control } = useForm()
+    const { register, handleSubmit, control } = useFormState()
 
     return (
         <Container component="main" maxWidth="xs">
@@ -111,10 +113,16 @@ export default function SignIn() {
                         id="lastname"
                         autoComplete="current-password"
                     />
-                    <FormControlLabel
-                        control={
-                            <Controller as={Checkbox} control={control} name="remember" color="primary" defaultValue={false} />}
-                        label="Remember me"
+                    <Controller
+                        name='contactAutre'
+                        control={control}
+                        defaultValue={false}
+                        render={({ field }) => (
+                            <FormControlLabel
+                                control={<Checkbox {...field} />}
+                                label='Remember me'
+                            />
+                        )}
                     />
                     <Button
                         type="submit"
@@ -127,13 +135,13 @@ export default function SignIn() {
                     </Button>
                     <Grid container>
                         <Grid item xs>
-                            <Link href="#" variant="body2">
+                            <Link to="#" >
                                 Forgot password?
                             </Link>
                         </Grid>
                         <Grid item>
-                            <Link href="/forms" variant="body2">
-                                {"Already have an account? Login"}
+                            <Link to="/forms">
+                                Already have an account? Login
                             </Link>
                         </Grid>
                     </Grid>
