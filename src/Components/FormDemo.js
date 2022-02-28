@@ -9,7 +9,7 @@ function FormDemo() {
             lastName: "",
             age: "",
             gender: "male",
-            hobbies: ["cooking", "coding"],
+            hobbies: ["skateboarding", "coding"],
         },
     });
 

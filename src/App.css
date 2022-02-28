@@ -17,9 +17,18 @@ body {
 }
 
 a {
-  
+  background-color: transparent;
+  color: darkgray;
   text-decoration: none;
-  
+}
+
+a .menu-links {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+a:hover {
+  color: palevioletred;
 }
 
 .displayUsers {

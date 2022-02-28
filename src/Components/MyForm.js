@@ -46,6 +46,7 @@ function MyForm() {
                 items={[
                     { name: "Male", value: "male" },
                     { name: "Female", value: "female" },
+                    { name: "Other", value: "other" },
                 ]}
             />
 
@@ -57,10 +58,10 @@ function MyForm() {
                 label="Hobbies"
                 rules={{ required: "Required!" }}
                 items={[
-                    { name: "Singing", value: "singing" },
-                    { name: "Dancing", value: "dancing" },
-                    { name: "Cooking", value: "cooking" },
-                    { name: "Reading", value: "reading" },
+                    { name: "Skateboarding", value: "skateboarding" },
+                    { name: "Cabriolets", value: "cabriolets" },
+                    { name: "Pizza", value: "pizza" },
+                    { name: "Bitcoin", value: "bitcoin" },
                     { name: "Coding", value: "coding" },
                 ]}
             />
